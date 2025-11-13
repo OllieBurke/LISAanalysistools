@@ -413,10 +413,11 @@ class XY2TDISens(Sensitivity):
         Returns:
             Stochastic contribution to CSD.
         """
-        x = 2.0 * np.pi * lisaLT * f
-        # Placeholder - using TDI1 form scaled by -0.5
-        t = -0.5 * (4.0 * x**2 * np.sin(x) ** 2)
-        return Sh * t
+        # TODO: Need to implement correct stochastic transform for TDI2 CSDs
+        # raise NotImplementedError(
+        #             "Stochastic transform for TDI2 cross-spectra needs verification."
+        #         )
+        return Sh
 
 
 class YZ2TDISens(XY2TDISens):
